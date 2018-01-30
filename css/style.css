@@ -1,0 +1,32 @@
+body {
+  background-color: #f2efed;
+  margin: 0;
+}
+#menu {
+  height: 120px;
+  width: 100%;
+  border-bottom: 3px solid #d0d0d0;
+}
+#logo {
+  float: left;
+  height: 100%;
+  width: 30%;
+}
+
+.imagelogo {
+  position: relative;
+  height: 100%;
+  float: left;
+}
+
+#login {
+  width: 100px;
+  position: relative;
+  float: right;
+  background-colour: black;
+}
+
+.profile {
+  margin-top: 20px;
+  max-height: 80px;
+}
