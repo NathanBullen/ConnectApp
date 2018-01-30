@@ -2,7 +2,7 @@ body {
   background-color: #f2efed;
   margin: 0;
 }
-#menu {
+#header {
   height: 120px;
   width: 100%;
   border-bottom: 3px solid #d0d0d0;
@@ -10,7 +10,7 @@ body {
 #logo {
   float: left;
   height: 100%;
-  width: 30%;
+  width: 300px;
 }
 
 .imagelogo {
@@ -29,4 +29,36 @@ body {
 .profile {
   margin-top: 20px;
   max-height: 80px;
+}
+
+#menu{
+  width: 225px;
+  height: calc(100vh - 123px);
+  border-right: 3px solid #d0d0d0;
+}
+#home{
+  width: 100%;
+  height: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #d0d0d0;
+  font-size: 20px;
+  color: #67636f;
+}
+.lefticon{
+  margin-left: 30px;
+  margin-right: 10px;
+}
+.righticon{
+  margin-left: 70px;
+  font-size: 30px;
+}
+#topics{
+  width: 100%;
+  height: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #d0d0d0;
+  font-size: 20px;
+  color: #67636f;
 }
