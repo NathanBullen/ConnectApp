@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<head>
+    <link rel="stylesheet" href="css/style.css?v=<?=time();?>">
+</head>
+<body>
+<!-- Loading the scripts-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="js/topic.js"></script>
+<!-- The horizontal header across the top of the page, includes the logo and the profile (Dummy)-->
+  <div id="header">
+    <div id="logo">
+      <img class="imagelogo" src="https://www.connecteducation.com.au/assets/logo_black-97c14e77ecec2c4624b560c20c53df78b1d81159eb0fd1f2ca7040f4e289a209.png" alt="Connect App"></img>
+    </div>
+    <div id="login">
+      <img class="profile" src="https://www.mathlearningcenter.org/sites/default/files/images/profile-blank.png" alt="Profile Picture"></img>
+    </div>
+  </div>
+<!-- Header end -->
+<!-- Side menu, includes Home, Topics and questions-->
+  <div id="menu">
+    <div id="home">
+      <i class="fa fa-home lefticon" aria-hidden="true"></i>Home
+    </div>
+    <div id="topics">
+      <i class="fa fa-list-ul lefticon" aria-hidden="true"></i>Topics<i class="fa fa-angle-right righticon" aria-hidden="true"></i>
+      <ul id="topics-sub">
+        <li><a href="#">Chemistry</a></li>
+        <li><a href="#">Biology</a></li>
+        <li><a href="#">Physics</a></li>
+        <li><a href="#">Psychology</a></li>
+      </ul>
+    </div>
+    <div id="pratice-quiz">
+    </div>
+  </div>
+</body>
 </html>
