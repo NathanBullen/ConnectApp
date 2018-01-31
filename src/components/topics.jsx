@@ -1,3 +1,7 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import $ from 'jquery';
+
 $(document).ready(function(){
   /*The drop down and pull up of the topics bar*/
   var visible = 0;
