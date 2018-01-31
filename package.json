@@ -1,19 +1,16 @@
 {
   "name": "connectapp",
-  "version": "1.0.0",
-  "scripts": {
-    "client": "cd client && yarn start",
-    "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
-  },
- "repository": {
-+    "type": "git",
-+    "url": "https://github.com/NathanBullen/ConnectApp.git"
-+  },
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "express": "^4.16.2"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.0"
   },
-  "devDependencies": {
-    "concurrently": "^3.5.0"
+  "scripts": {
+    "start": "PORT=2096 react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
