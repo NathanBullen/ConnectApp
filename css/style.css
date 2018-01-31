@@ -52,6 +52,15 @@ body {
 .righticon{
   margin-left: 70px;
   font-size: 30px;
+  -webkit-transition-duration: 300ms;
+    -moz-transition-duration: 300ms;
+    -o-transition-duration: 300ms;
+    transition-duration: 300ms;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+  outline: 0;
 }
 #topics{
   width: 100%;
@@ -71,4 +80,13 @@ body {
   margin-bottom: 0px;
   transition: visibility 0s, max-height 0.5s ease-in;
   transition-delay: 230ms, 0s;
+}
+
+#topics-sub li {
+  list-style-type: none; /*Removing the dot points*/
+}
+
+#topics-sub a {
+  color: #67636f;
+  text-decoration: none;
 }
