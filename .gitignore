@@ -9,6 +9,11 @@
 # production
 /build
 
+#security
+key.pem
+cert.pem
+csr.pem
+
 # misc
 .DS_Store
 .env.local

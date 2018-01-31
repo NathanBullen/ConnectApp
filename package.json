@@ -1,0 +1,19 @@
+{
+  "name": "connectapp",
+  "version": "1.0.0",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+ "repository": {
++    "type": "git",
++    "url": "https://github.com/NathanBullen/ConnectApp.git"
++  },
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  }
+}
