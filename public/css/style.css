@@ -32,9 +32,14 @@ body {
 }
 
 #menu{
+  float: left;
   width: 225px;
   height: calc(100vh - 123px);
   border-right: 3px solid #d0d0d0;
+}
+#react-container{
+  float: right;
+  width: calc(100% - 225px - 3px); /* Take away the menu and the border */
 }
 #home{
   width: 100%;

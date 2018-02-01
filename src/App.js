@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { render } from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
 import './components/topics.jsx';
+//import Question from './components/Question.jsx';
 
 class App extends Component {
   render() {
