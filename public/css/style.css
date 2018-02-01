@@ -37,7 +37,7 @@ body {
   height: calc(100vh - 123px);
   border-right: 3px solid #d0d0d0;
 }
-#react-container{
+#quiz{
   float: right;
   width: calc(100% - 225px - 3px); /* Take away the menu and the border */
 }
