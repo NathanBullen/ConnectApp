@@ -34,6 +34,7 @@ class Answers extends React.Component {
             checkedAnswer: true,
 			questionAnswered: true
         })
+		this.props.showNextButton();
     }
 	
     checkAnswer(e) {

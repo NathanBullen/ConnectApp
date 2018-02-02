@@ -9,6 +9,7 @@ class Quiz extends React.Component {
         this.state = {
             currentQuestion: 0,
             total: data.length,
+			showNextButton: false,
             questionAnswered: false,
             score: 0,
 			displayEndQuiz: 'flex'
@@ -16,6 +17,7 @@ class Quiz extends React.Component {
         this.nextQuestion = this.nextQuestion.bind(this);
         this.handleStartQuiz = this.handleStartQuiz.bind(this);
         this.handleIncreaseScore = this.handleIncreaseScore.bind(this);
+		this.handleShowNextButton = this.handleShowNextButton.bind(this);
     }
 
     loadQuestion(currentQuestion) {
@@ -48,6 +50,7 @@ class Quiz extends React.Component {
         } else {
             this.loadQuestion(currentQuestion);
             this.setState({
+				showNextButton: false,
                 questionAnswered: false
             });
         }
@@ -66,9 +69,15 @@ class Quiz extends React.Component {
             score: this.state.score + 1
         });
     }
-
+	
+	handleShowNextButton() {
+		this.setState({
+			showNextButton: true
+		});
+	}
+	
     render() {
-        let { currentQuestion, total, question, answers, correctAnswer, questionAnswered, displayEndQuiz, score} = this.state;
+        let { currentQuestion, total, question, answers, correctAnswer, questionAnswered, displayEndQuiz, score, showNextButton} = this.state;
 
         return (
             <div id="quiz">
@@ -80,10 +89,15 @@ class Quiz extends React.Component {
 						<h4>Question {currentQuestion} of {total}</h4>
 						<p>{question}</p>
 					 </div>
-					 <Answers answers={answers} correctAnswer={correctAnswer} isAnswered={questionAnswered} increaseScore={this.handleIncreaseScore}/>
-					 <div id="submit">
-						<button className="fancy-btn" onClick={this.nextQuestion} >{currentQuestion===total ? 'View Results' : 'Next Question'}</button>
-					 </div>
+					 <Answers answers={answers} correctAnswer={correctAnswer} isAnswered={questionAnswered} increaseScore={this.handleIncreaseScore} showNextButton={this.handleShowNextButton}/>
+					{showNextButton ? 
+					<div>
+						<div class="horizontal-line"></div> 
+						<div id="submit">
+							<button className="fancy-btn" onClick={this.nextQuestion} >{currentQuestion===total ? 'View Results' : 'Next Question'}</button>
+						</div>
+						<div class="horizontal-line"></div>
+					</div> : null}
 				</div>
 			</div>
         );
