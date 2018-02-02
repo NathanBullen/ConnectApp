@@ -1,0 +1,12 @@
+Problem Solutions.
+
+1 - Adding a section below the topics which lists the topic, with the practice quizzes detailed underneath that section.
+
+2 - Use a bright outline rather than a background so the text is still easy to see while it is also clear what option you have selected.
+
+3 - The multiple choice options are now all the same size, a future implementation (I haven't implemented it yet) could be to make bigger text for the subjects with less words, so that the options could look even more sublimed and balanced.
+
+
+The process for testing whether the problems have been solved is to reconduct the user interviews, primarily with the users who voice their concerns, as well as another internal design review. These problems will be not be raised again if they have been successfully solved while no new problems should have been created. It should be noted that note only user tests should be reconducted, the IT team themselves should administered their tests and sanitations to make sure that their change of code has not created any bugs or exploits.
+
+Process listed and code by Nathan Bullen
