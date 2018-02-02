@@ -32,9 +32,10 @@ class Quiz extends React.Component {
             question: data[currentQuestion].question,
 			answers: iterateanswers,
             correctAnswer: data[currentQuestion].correctanswer,
-            currentQuestion: currentQuestion + 1,
-        });
-
+            currentQuestion: currentQuestion + 1
+        }, function() {
+			this.refs.Answers.resetHeight();
+		});
     }
 
     componentWillMount() {
@@ -44,7 +45,6 @@ class Quiz extends React.Component {
 
     nextQuestion() {
         let { currentQuestion, total, score } = this.state;
-
         if(currentQuestion === total){
 			//End Quiz State
             this.setState({
@@ -99,7 +99,7 @@ class Quiz extends React.Component {
 						<h4>Question {currentQuestion} of {total}</h4>
 						<p>{question}</p>
 					 </div>
-					 <Answers answers={answers} correctAnswer={correctAnswer} isAnswered={questionAnswered} questionStarted={questionStarted}  increaseScore={this.handleIncreaseScore} showNextButton={this.handleShowNextButton} questionHasStarted={this.handleQuestionStarted}/>
+					 <Answers ref="Answers" answers={answers} correctAnswer={correctAnswer} isAnswered={questionAnswered} questionStarted={questionStarted}  increaseScore={this.handleIncreaseScore} showNextButton={this.handleShowNextButton} questionHasStarted={this.handleQuestionStarted}/>
 					{showNextButton ? 
 					<div>
 						<div class="horizontal-line"></div> 
