@@ -16,6 +16,9 @@ function Menu() {
 				<li><a href="#">Psychology</a></li>
 			  </ul>
 			</div>
+			<div id="selected-topic">
+				Galvanic Chemistry
+			</div>
 			<div id="questions">
 			  <i class="fa fa-pencil lefticon" aria-hidden="true"></i>Practice Quiz<i class="fa fa-angle-right righticon practiceicon" aria-hidden="true"></i>
 			</div>
