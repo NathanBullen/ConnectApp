@@ -6,11 +6,13 @@ class Answers extends React.Component {
         this.state = {
             isAnswered: false,
 			highlightedAnswer: '',
+			checkedAnswer: false,
             classNames: ['', '', '', '']
         }
         
 		this.highlightAnswer = this.highlightAnswer.bind(this);
         this.checkAnswer = this.checkAnswer.bind(this);
+		this.handleCheckedAnswer = this.handleCheckedAnswer.bind(this);
     }
     
 	highlightAnswer(e) {
@@ -26,6 +28,13 @@ class Answers extends React.Component {
 			highlightAnswer: answer
 		});
 	}
+	
+	handleCheckedAnswer() {
+        this.setState({
+            checkedAnswer: true,
+			questionAnswered: true
+        })
+    }
 	
     checkAnswer(e) {
         let { isAnswered } = this.props;
@@ -47,8 +56,9 @@ class Answers extends React.Component {
             }
             
             this.setState({
-                classNames: updatedClassNames
+                classNames: updatedClassNames,
             })
+			this.handleCheckedAnswer();
         }
     }
     
@@ -58,7 +68,7 @@ class Answers extends React.Component {
     
     render() {
         let { answers } = this.props;
-        let { classNames } = this.state;
+        let { classNames, checkedAnswer } = this.state;
         
         let transition = {
             transitionName: "example",
@@ -76,9 +86,14 @@ class Answers extends React.Component {
 						<li onClick={this.highlightAnswer} className={classNames[3]} data-id="4"><span>D</span> <p>{answers[3]}</p></li>
 					</ul>
 				</div>	
-				<div class="horizontal-line"></div>
-				<button className="fancy-btn" onClick={this.checkAnswer}>Check Answer</button>
-				<div class="horizontal-line"></div>
+				{checkedAnswer ? null : 
+				<div>
+					<div class="horizontal-line"></div> 
+					<div id="submit">
+						<button className="fancy-btn" onClick={this.checkAnswer}>Check Answer</button>
+					</div>
+					<div class="horizontal-line"></div>
+				</div>}
 			</div>
         );
     }
