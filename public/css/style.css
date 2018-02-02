@@ -117,7 +117,6 @@ body {
   padding-bottom: 20px;
   border-bottom: 3px solid #d0d0d0;
   font-size: 25px;
-  color: #67636f;
 }
 
 .fancy-btn {
@@ -219,15 +218,9 @@ body {
 }
 
 #answers li.selected {
-    background-color: #6bb5cb;
-}
-
-#answers li.selected span {
-	color: #fff;
-}
-
-#answers li.selected p {
-	color: #fff;
+    -webkit-box-shadow:inset 0px 0px 0px 4px #0284ff;
+    -moz-box-shadow:inset 0px 0px 0px 4px #0284ff;
+	box-shadow:inset 0px 0px 0px 4px #0284ff;
 }
 
 
