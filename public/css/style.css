@@ -67,6 +67,10 @@ body {
     transition-property: transform;
   outline: 0;
 }
+
+.practiceicon{
+	margin-left: 10px !important;
+}
 #topics{
   width: 100%;
   height: auto;
@@ -94,6 +98,16 @@ body {
 #topics-sub a {
   color: #67636f;
   text-decoration: none;
+}
+
+#questions{
+  width: 100%;
+  height: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #d0d0d0;
+  font-size: 20px;
+  color: #67636f;
 }
 
 .fancy-btn {
