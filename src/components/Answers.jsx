@@ -17,6 +17,11 @@ class Answers extends React.Component {
     
 	highlightAnswer(e) {
 		let { highlightedAnswer } = this.props;
+		let{ checkedAnswer } = this.state;
+		//If someone has already checked their answer, they shouldn't be able to select others
+		if(checkedAnswer){
+			return;
+		}
 		let elem = e.currentTarget;
 		let updatedClassNames = this.state.classNames;
 		let answer = Number(elem.dataset.id);

@@ -92,7 +92,7 @@ class Quiz extends React.Component {
         return (
             <div id="quiz">
 			
-				<QuizOverlay style={{display: displayEndQuiz}} score={score} total={total} startQuiz={this.handleStartQuiz}/>
+				<QuizOverlay style={{display: displayEndQuiz}} score={score} total={total} startQuiz={this.handleStartQuiz} currentQuestion={currentQuestion} showNextButton = {showNextButton} />
 			
 				<div class="quiz-introduction-holder">
 					<div class="quiz-introduction-text-box">

@@ -31,9 +31,11 @@ class QuizOverlay extends React.Component {
     }
     
     componentWillReceiveProps(nextProps) {
-        this.setState({
-            description: 'You have completed the quiz. <br /> You got: <strong>' + this.props.score + '</strong> out of <strong>' +this.props.total +'</strong> questions right.'
-        })
+		if(this.props.showNextButton){
+			this.setState({
+				description: 'You have completed the quiz. <br /> You got: <strong>' + this.props.score + '</strong> out of <strong>' +this.props.total +'</strong> questions right.'
+			})
+		}
     }
     
     createMarkup(html) {
