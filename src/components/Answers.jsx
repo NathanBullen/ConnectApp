@@ -43,7 +43,7 @@ class Answers extends React.Component {
         if(!this.state.highlightAnswer){
 			alert("You need to select an answer");
 		}
-        if(!isAnswered) {
+        else if(!isAnswered) {
             let { correctAnswer, increaseScore } = this.props;
             let answer = this.state.highlightAnswer;
             let updatedClassNames = this.state.classNames;
