@@ -27,6 +27,7 @@ class Answers extends React.Component {
 			classNames: updatedClassNames,
 			highlightAnswer: answer
 		});
+		this.props.questionHasStarted();
 	}
 	
 	handleCheckedAnswer() {
@@ -69,7 +70,15 @@ class Answers extends React.Component {
     
     render() {
         let { answers } = this.props;
-        let { classNames, checkedAnswer } = this.state;
+		let { classNames, checkedAnswer } = this.state;
+		let { questionStarted } = this.props;
+		
+		if(!questionStarted){
+			this.state.highlightedAnswer = '';
+			this.state.classNames = ['', '', '', ''];
+			this.state.checkedAnswer = false;
+			this.props.questionHasStarted();
+		}
         
         let transition = {
             transitionName: "example",

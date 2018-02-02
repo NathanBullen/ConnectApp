@@ -11,6 +11,7 @@ class Quiz extends React.Component {
             total: data.length,
 			showNextButton: false,
             questionAnswered: false,
+			questionStarted: false,
             score: 0,
 			displayEndQuiz: 'flex'
         }
@@ -18,6 +19,7 @@ class Quiz extends React.Component {
         this.handleStartQuiz = this.handleStartQuiz.bind(this);
         this.handleIncreaseScore = this.handleIncreaseScore.bind(this);
 		this.handleShowNextButton = this.handleShowNextButton.bind(this);
+		this.handleQuestionStarted = this.handleQuestionStarted.bind(this);
     }
 
     loadQuestion(currentQuestion) {
@@ -30,8 +32,9 @@ class Quiz extends React.Component {
             question: data[currentQuestion].question,
 			answers: iterateanswers,
             correctAnswer: data[currentQuestion].correctanswer,
-            currentQuestion: currentQuestion + 1
+            currentQuestion: currentQuestion + 1,
         });
+
     }
 
     componentWillMount() {
@@ -51,7 +54,8 @@ class Quiz extends React.Component {
             this.loadQuestion(currentQuestion);
             this.setState({
 				showNextButton: false,
-                questionAnswered: false
+                questionAnswered: false,
+				questionStarted: false
             });
         }
 
@@ -76,8 +80,14 @@ class Quiz extends React.Component {
 		});
 	}
 	
+	handleQuestionStarted() {
+		this.setState({
+			questionStarted: true
+		});
+	}
+	
     render() {
-        let { currentQuestion, total, question, answers, correctAnswer, questionAnswered, displayEndQuiz, score, showNextButton} = this.state;
+        let { currentQuestion, total, question, answers, correctAnswer, questionAnswered, questionStarted, displayEndQuiz, score, showNextButton} = this.state;
 
         return (
             <div id="quiz">
@@ -89,7 +99,7 @@ class Quiz extends React.Component {
 						<h4>Question {currentQuestion} of {total}</h4>
 						<p>{question}</p>
 					 </div>
-					 <Answers answers={answers} correctAnswer={correctAnswer} isAnswered={questionAnswered} increaseScore={this.handleIncreaseScore} showNextButton={this.handleShowNextButton}/>
+					 <Answers answers={answers} correctAnswer={correctAnswer} isAnswered={questionAnswered} questionStarted={questionStarted}  increaseScore={this.handleIncreaseScore} showNextButton={this.handleShowNextButton} questionHasStarted={this.handleQuestionStarted}/>
 					{showNextButton ? 
 					<div>
 						<div class="horizontal-line"></div> 
