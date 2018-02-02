@@ -1,5 +1,6 @@
 import React from 'react';
 import data from '../data/QuizQuestions.js';
+import Answers from './Answers';
 import QuizOverlay from './QuizOverlay';
 
 class Quiz extends React.Component {
@@ -18,10 +19,15 @@ class Quiz extends React.Component {
     }
 
     loadQuestion(currentQuestion) {
+	    //This allows for more than 4 answers.
+		var iterateanswers = [];
+		for(var i = 0; i < data[currentQuestion].answers.length; i++) {
+			iterateanswers.push(data[currentQuestion].answers[i]);
+		}
         this.setState({
             question: data[currentQuestion].question,
-            answers: [data[currentQuestion].answers],
-            correctanswer: data[currentQuestion].correctanswer,
+			answers: iterateanswers,
+            correctAnswer: data[currentQuestion].correctanswer,
             currentQuestion: currentQuestion + 1
         });
     }
@@ -62,14 +68,24 @@ class Quiz extends React.Component {
     }
 
     render() {
-        let { currentQuestion, total, question, answers, correct, questionAnswered, displayEndQuiz, score} = this.state;
+        let { currentQuestion, total, question, answers, correctAnswer, questionAnswered, displayEndQuiz, score} = this.state;
 
         return (
             <div id="quiz">
 			
-			<QuizOverlay style={{display: displayEndQuiz}} score={score} total={total} startQuiz={this.handleStartQuiz}/>
+				<QuizOverlay style={{display: displayEndQuiz}} score={score} total={total} startQuiz={this.handleStartQuiz}/>
 			
-            </div>
+				<div class="quiz-introduction-holder">
+					<div class="quiz-introduction-text-box">
+						<h4>Question {currentQuestion} of {total}</h4>
+						<p>{question}</p>
+					 </div>
+					 <Answers answers={answers} correctAnswer={correctAnswer} isAnswered={questionAnswered} increaseScore={this.handleIncreaseScore}/>
+					 <div id="submit">
+						<button className="fancy-btn" onClick={this.nextQuestion} >{currentQuestion===total ? 'View Results' : 'Next Question'}</button>
+					 </div>
+				</div>
+			</div>
         );
     }
 };

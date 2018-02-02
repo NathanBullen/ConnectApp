@@ -172,3 +172,83 @@ body {
 .quiz-introduction  .fancy-btn{
     margin: 20px auto;
 }
+
+#answers ul{
+    list-style-type: none;
+    padding: 0;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#answers li {
+	margin: 0 30px 0;
+    background-color: #fff;
+	border-radius: 10px;
+    min-height: 70px;
+    width: calc(50% - 60px);
+    display: flex;
+    margin-bottom: 30px;
+    cursor: pointer;
+	box-shadow: 3px 3px #dedede;
+}
+
+#answers li.selected {
+    background-color: #6bb5cb;
+}
+
+#answers li.selected span {
+	color: #fff;
+}
+
+#answers li.selected p {
+	color: #fff;
+}
+
+
+#answers li span {
+    color: #0284ff;
+    flex: 50px;
+    display: flex;
+	font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+    transition: background-color .3s ease;
+}
+
+#answers li p {
+    color: #0b0e21;
+    font-size: 16px;
+    font-weight: 400;
+    flex: calc(100% - 50px);
+    margin: auto 20px;
+    transition: color .3s ease;
+}
+
+#answers li.right {
+    border-color: #1ea55b;
+    color: #1ea55b;
+}
+
+#answers li.right span {
+    background-color: #1ea55b;
+}
+
+#answers li.right p {
+    color: #1ea55b;
+}
+
+#answers li.wrong {
+    border-color: #dc0a0a;
+    color: #dc0a0a;
+}
+
+#answers li.wrong span {
+    background-color: #dc0a0a;
+}
+
+#answers li.wrong p {
+    color: #dc0a0a;
+}
